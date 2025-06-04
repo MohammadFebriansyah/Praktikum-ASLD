@@ -182,4 +182,26 @@ public class BinaryTree13 {
         }
         return current;
     }
+
+    public Mahasiswa13 cariMinIPK() {
+        if (root == null) {
+            return null;
+        }
+        Node13 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.mahasiswa;
+    }
+
+    public Mahasiswa13 cariMaxIPK() {
+        if (root == null) {
+            return null;
+        }
+        Node13 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.mahasiswa;
+    }
 }
