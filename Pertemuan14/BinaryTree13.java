@@ -166,4 +166,20 @@ public class BinaryTree13 {
             }
         }
     }
+
+    public void addRekursif(Mahasiswa13 mahasiswa) {
+        root = addRekursifHelper(root, mahasiswa);
+    }
+
+    public Node13 addRekursifHelper(Node13 current, Mahasiswa13 mahasiswa) {
+        if (current == null) {
+            return new Node13(mahasiswa);
+        }
+        if (mahasiswa.ipk < current.mahasiswa.ipk) {
+            current.left = addRekursifHelper(current.left, mahasiswa);
+        } else {
+            current.right = addRekursifHelper(current.right, mahasiswa);
+        }
+        return current;
+    }
 }
