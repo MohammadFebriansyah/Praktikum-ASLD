@@ -204,4 +204,21 @@ public class BinaryTree13 {
         }
         return current.mahasiswa;
     }
+
+    public void tampilMahasiswaIPKdiAtas(double ipkBatas) {
+        tampilMahasiswaIPKdiAtasHelper(root, ipkBatas);
+    }
+
+    public void tampilMahasiswaIPKdiAtasHelper(Node13 node, double ipkBatas) {
+        if (node == null)
+            return;
+
+        tampilMahasiswaIPKdiAtasHelper(node.left, ipkBatas);
+
+        if (node.mahasiswa.ipk > ipkBatas) {
+            node.mahasiswa.tampilInformasi();
+        }
+
+        tampilMahasiswaIPKdiAtasHelper(node.right, ipkBatas);
+    }
 }
